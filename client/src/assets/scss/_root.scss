@@ -1,16 +1,4 @@
-@use 'media-query' as media;
-
-/* 
-  ### Note: 
-  1. @use는 @import랑 비슷한 개념인데 import와는 달리 접근자로 특정 스타일에 접근 가능해서 import 보다 안전 
-  
-  2. :root는 의사 클래스로 문서 가장 상위 요소를 나타냅니다. 즉, html태그를 가리킵니다.
-  보통 전역에서 사용하는 스타일 값을 (예를들어 메인 테마와 관련된..)이 안에서 변수로 선언해두고 사용한다. 
-  여기서 정의한 값들을 각 스타일 시트에서 사용하려면 var(변수명) 이렇게 사용하면 된다.
-  #사용 예시)
-  main.scss에서 --primary-blue에 저장된 색상을 사용하고 싶은 경우
-  color: var( --primary-blue) 이렇게 작성해주시면 됩니다.
-*/
+@use "media-query" as media;
 
 :root {
   position: relative;
