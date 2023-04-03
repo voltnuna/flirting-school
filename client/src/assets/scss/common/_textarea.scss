@@ -1,0 +1,28 @@
+@use '../variables' as var;
+
+.chatting-area {
+  position: relative;
+  height: calc(100% - 48px);
+}
+.chatbox-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.6rem;
+  form {
+    width: 100%;
+    button[type="submit"] {
+      background-color: var(--primary-green);
+    }
+  }
+  textarea {
+    width: 100%;
+    resize: none;
+    padding: 1.3rem;
+    border-radius: 5px;
+    color: #fff;
+    background-color: var(--hovered-gray);
+    font-size: var.$font-size;
+  }
+}

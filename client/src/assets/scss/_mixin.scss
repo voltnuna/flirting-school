@@ -1,0 +1,42 @@
+//S: Mixin
+@mixin after($dis) {
+  &::after {
+    display: $dis;
+    content: "";
+    @content;
+  }
+}
+
+@mixin setTitle($font-size: 1.6rem, $color: #fff, $weight: 600) {
+  font-size: $font-size;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin setPosition($pos, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin setFlex($dis: flex, $jus: null, $align: null) {
+  display: $dis;
+  justify-content: $jus;
+  align-items: $align;
+}
+
+@mixin ellipsis($line, $height: 3em) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  height: $height;
+}
+
+//이미지 bacseUrl
+@function imgUrl($filename) {
+  @return url("../images/#{$filename}");
+}

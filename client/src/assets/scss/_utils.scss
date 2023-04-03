@@ -1,0 +1,197 @@
+@use './mixin' as mixin;
+
+.hidden {
+  display: none;
+}
+.in-a-row {
+  @include mixin.setFlex(inline-flex);
+}
+
+.h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: "Happiness-Sans-Title";
+}
+.h3 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Happiness-Sans-Title";
+}
+.h5 {
+  color: #fff;
+  font-size: 1.7rem;
+  font-family: "Happiness-Sans-Title";
+}
+
+.float {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+  }
+  &-clear {
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+}
+
+.center {
+  &-item {
+    @include mixin.setFlex(flex, center, center);
+    width: 100%;
+    min-height: 100vh;
+  }
+  &-vertical {
+    @include mixin.setFlex(flex, null, center);
+  }
+  &-txt {
+    text-align: center;
+  }
+}
+
+.underline {
+  border-bottom: 1px solid #42464d;
+}
+
+.btn-slider {
+  width: 3.5rem;
+  height: 2rem;
+  background-color: #72767d;
+  border-radius: 10px;
+  & > input[type="checkbox"] {
+    display: inline-block;
+    border-radius: 50%;
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: #fff;
+    appearance: none;
+  }
+}
+
+.avoid--click {
+  pointer-events: none; //해당 요소는 click event target이 되지 않도록
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  color: #fff;
+  border-radius: 1rem;
+  margin: 0 1rem;
+  &.negative {
+    border: 1px solid #e03a3e;
+    background: linear-gradient(to bottom, rgb(224 58 62 / 71%), #e03a3e);
+  }
+  &.positive {
+    border: 1px solid #00993e;
+    background: linear-gradient(to bottom, rgb(97 187 70 / 71%), #00993e);
+  }
+}
+
+.terms {
+  padding: 1.5rem 0;
+  border-top: 1px solid #42464d;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+.radio-wrap {
+  display: inline-block;
+  input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 1rem;
+  }
+}
+
+.spinner {
+  color: #00993e;
+  font-size: 20px;
+  margin: 100px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}

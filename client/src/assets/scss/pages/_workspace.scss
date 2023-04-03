@@ -1,0 +1,185 @@
+@use '../variables' as var;
+@use "../mixin" as mixin;
+
+.sidebar-panel {
+  width: 7.2rem;
+  height: 100vh;
+  background-color: var(--darkest-gray);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  li {
+    display: inline-block;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    background-color: var(--workspace-gray);
+    text-align: center;
+    margin: 1rem 0;
+    transition: 0.2s;
+    &.home:hover {
+      background-color: var(--primary-blue);
+      border-radius: 10px;
+    }
+    &:not(&.home):hover {
+      border-radius: 10px;
+      background-color: var(--primary-green);
+    }
+    a,
+    button {
+      display: inline-flex;
+      width: 100%;
+      height: 93%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.contents-panel {
+  width: calc(100% - 7.2rem);
+  height: 100vh;
+  .side-panel {
+    position: relative;
+    width: 24rem;
+    width: 12.987%;
+    height: 100%;
+    background-color: var(--side-pen-gray);
+    font-size: var.$font-size;
+  }
+  .side-panel .head-label {
+    text-align: center;
+    line-height: 48px;
+    padding: 0 1rem;
+    height: 48px;
+    box-shadow: var(--elevation-low);
+  }
+  .side-panel .head-label button {
+    width: 100%;
+    height: 28px;
+    padding-left: 1rem;
+    overflow: hidden;
+    background-color: var(--darkest-gray);
+    color: #a3a6aa;
+    text-align: left;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    white-space: nowrap;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
+  .content-panel {
+    width: 87.013%;
+    height: 100vh;
+    background-color: var(--workspace-gray);
+  }
+
+  header {
+    width: 100%;
+    height: 4.8rem;
+    box-shadow: var(--elevation-low);
+    nav {
+      @include mixin.setFlex(flex, space-between, center);
+      margin: 0 2rem;
+    }
+  }
+
+  .list-vertical__item a span {
+    padding-left: 1.4rem;
+  }
+}
+
+.r-panel-util {
+  h5 {
+    width: 16rem;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 2rem;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+  @include mixin.setFlex(inline-flex, space-between, center);
+
+  width: 100%;
+  height: 4rem;
+  margin: 1.6rem 0;
+  padding: 0 1rem;
+  padding-left: 14px;
+  color: #96989d;
+  cursor: pointer;
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: 2px solid #96989d;
+    border-width: 2px 2px 0 0;
+    transform: rotate(47deg);
+    transform-origin: 2.5px 1px;
+    transition: 0.3s;
+  }
+  &.opened::before {
+    transform: rotate(135deg) translateY(-3px);
+  }
+}
+
+.channel-body {
+  //  height: 100%;
+  height: calc(100% - 49px);
+  font-size: var.$font-size;
+  &__left {
+    width: 73.973%;
+    height: 100%;
+    border-right: 1px solid
+      hsla(217, calc(var(--saturation-factor, 1) * 7.6%), 33.5%, 0.48);
+    .search-area {
+      padding: 1.6rem;
+    }
+    .search-area p {
+      margin: 1.6rem 0;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid
+        hsla(217, calc(var(--saturation-factor, 1) * 7.6%), 33.5%, 0.48);
+    }
+  }
+
+  &__right {
+    width: 26.027%;
+    height: 100%;
+    padding: 16px;
+    height: 100%;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: #b9bbbe;
+  }
+}
+
+.user-status {
+  @include mixin.setPosition(absolute, null, 0, 0, 0);
+  background-color: var(--darkest-gray);
+  padding: 1rem 1rem;
+  line-height: 1;
+  .profile-username {
+    color: #fff;
+    line-height: 40px;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}
+
+.offline {
+  display: none;
+}

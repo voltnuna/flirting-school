@@ -1,0 +1,9 @@
+$font-size: 1.6rem;
+
+$img-path: "../../images/";
+
+// 미디어쿼리를 위한 해상도별 넓이
+$wsvga-width: 1024px; // WSVGA 해상도 넓이 (아이패드 가로사이즈)
+$ipad-width: 768px; // 아이패드 해상도 넓이
+$phone-width: 360px; // 스마트폰 해상도 넓이 (정책 기준)
+$phone-height: 640px; // 스마트폰 해상도 넓이 (정책 기준)

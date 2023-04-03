@@ -1,0 +1,41 @@
+@use 'variables' as var;
+
+// 데스크탑 (1025px 이상)
+@mixin desktop {
+  @media all and (min-width: #{var.$wsvga-width + 1}) {
+    @content;
+  }
+}
+
+// 데스크탑 넓이보다 작은 크기일 때 (1023px 이하)
+@mixin tablet {
+  @media all and (max-width: #{var.$wsvga-width - 1}) {
+    @content;
+  }
+}
+
+// 아이패드 세로 넓이보다 작은 크기일 때 (767px 이하)
+@mixin mobile {
+  @media all and (max-width: #{var.$ipad-width - 1}) {
+    @content;
+  }
+}
+
+// 359px 이하
+@mixin smallMobile {
+  @media all and (max-width: #{var.$phone-width - 1}) {
+    @content;
+  }
+}
+
+@mixin mobileLandscape {
+  @media all and (orientation: landscape) and (max-width: #{var.$wsvga-width - 1}) {
+    @content;
+  }
+}
+
+@mixin mobilePortrait {
+  @media all and (orientation: portrait) and (max-width: #{var.$wsvga-width - 1}) {
+    @content;
+  }
+}
