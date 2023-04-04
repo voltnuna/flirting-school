@@ -7,44 +7,16 @@
 
 ## Table of Contents
 
-_Note: This is only a navigation guide for the specification, and does not define or mandate terms for any specification-compliant documents._
-
 - [Sections](#sections)
-  - 📚 [FILE STRUCTURE](#file-structure)
   - 👀 [Preview](#preview)
   - 🛠 [Usage](#usage)
   - 👧‍👦 [Contributing](#contributing)
-  - [License](#license)
-- [Definitions](#definitions)
 
 ## SECTIONS
 
 ### 📚CROSS BROWSING
 
 - 크롬 계열
-
-### 📚FILE STRUCTURE
-
-```
-- 📂 public
-    - 📄 electron.ts : electron config file
-    - 📄 preload.js : electron preload
-- 📂 src
-  - 📂 assets
-    - 📂 fonts
-    - 📂 images
-    - 📂 scss
-    - 📂 ts
-- 📂 components
-- 📂 layouts
-- 📂 pages
-- 📂 typings
-- 📂 utils
-- 📂 hooks
-  - 📄 useBoolean : 모달 open, hidden을 위한 hooks
-  - 📄 useInputs : input 값 handle을 위한 hook
-- ✅📄 tsconfig.json : js설정파일 (추가할 경로가 있을 경우 이 파일에서 셋팅한다.)
-```
 
 ### 👀PREVIEW
 
@@ -72,7 +44,6 @@ Backend (mysql 설치 필요)
 
 Frontend
 ```
-  npm install
   cd client
   npm run electron
 ```
